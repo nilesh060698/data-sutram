@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {{#if notRegistered}}
+    <h2 style="text-align:center; margin-top:200px;">email already exist</h2>
+    {{/if}}
+    {{#if loggedIn}}
+    <h2 style="text-align:center; margin-top:200px;">Thanks for logging in <style="color:red;">{{name}} </style>and your json web token</h2><h3 style="text-align:center;"> is {{token}}</h3>
+    <br>
+    <div style="text-align:center">
+    <a href="https://jwt.io/" target="_blank" style="text-align:center;"> click here to verify the token </a>
+  </div>
+    <a href="/logout">  <button type="submit" class="btn btn-primary btn-block btn-c mt-4 mb-4" id="register" >Log Out</button></a>
+    {{/if}}
+    {{#if userExist}}
+    <h2 style="text-align:center; margin-top:200px;">User Name already exist</h2>
+    {{/if}}
+     {{#each docsss}}
+     <h2 style="text-align:center; margin-top:200px;"> Thanks for registering  {{this.userName}}  your user id is   {{this._id}} </h2>
+      <a href="/logout">  <button type="submit" class="btn btn-primary btn-block btn-c mt-4 mb-4" id="register" >Log Out</button></a>
+   {{/each}}
+  </body>
+</html>
