@@ -137,6 +137,7 @@ app.post('/login',(req,res)=>{
   userData.find({userName:req.body.username},(err,doc)=>{
     if(!err)
     {
+      if(doc.length == 1){
       var docs=doc;
       console.log(docs);
       if(docs[0].Password == req.body.password)
@@ -147,11 +148,12 @@ app.post('/login',(req,res)=>{
 
       }
       else{
-        res.redirect('/');
+        res.redirect('/login');
       }
+     }
     }
     else{
-      res.redirect('/');
+      res.redirect('/login');
     }
   });
 });
