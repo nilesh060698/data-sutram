@@ -124,7 +124,7 @@ app.post('/register',(req,res)=>{
 );
 console.log(token);
 
-res.render('userhome',{
+res.render('userhome.hbs',{
   loggedIn:true,
   name:req.session.userName,
   token:token
