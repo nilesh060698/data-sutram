@@ -117,7 +117,7 @@ app.post('/register',(req,res)=>{
       userName:req.session.userName,
       userId:req.session.userId
     },
-     process.env.JWT_KEY,
+     'secret',
   {
     expiresIn:"1h"
   }
